@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:profile/models_row_three_container.dart';
 
-class RowThreeContainer extends StatefulWidget {
-  const RowThreeContainer({super.key});
+class Category extends StatefulWidget {
+  const Category({super.key});
 
   @override
-  State<RowThreeContainer> createState() => _RowThreeContainerState();
+  State<Category> createState() => _CategoryState();
 }
 
-class _RowThreeContainerState extends State<RowThreeContainer> {
-  List<ModelsThreeContainer> threecontainers = [
-    ModelsThreeContainer(tekst: "Woman"),
-    ModelsThreeContainer(tekst: "Man"),
-    ModelsThreeContainer(tekst: "Old"),
-  ];
+class _CategoryState extends State<Category> {
   int selectedContainerIndex = 0;
+  List<String> categoryName = ["Women", "Man", "Old"];
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: threecontainers.asMap().entries.map((entry) {
+      children: categoryName.asMap().entries.map((entry) {
         //asmap pretvara listu u mapu gde su kljucevi indeksi a vrednosti elementi
         //entries vraca objekat koji generise parove kljuc vrednosti za svaki element
         final index = entry.key; //pristup indeksu trenutnog elementa
-        final container = entry.value; // pristup samog elementa
+        final categoryName = entry.value; // pristup samog elementa
 
         return Expanded(
           flex: 1,
@@ -43,7 +38,7 @@ class _RowThreeContainerState extends State<RowThreeContainer> {
               ),
               child: Center(
                 child: Text(
-                  container.tekst,
+                  categoryName,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: index == selectedContainerIndex

@@ -1,15 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class FirstRowContText extends StatefulWidget {
-  const FirstRowContText({super.key});
+class ProfileTextAndIcons extends StatefulWidget {
+  const ProfileTextAndIcons({super.key});
 
   @override
-  State<FirstRowContText> createState() => _FirstRowContTextState();
+  State<ProfileTextAndIcons> createState() => _ProfileTextAndIconsState();
 }
 
-class _FirstRowContTextState extends State<FirstRowContText> {
+class _ProfileTextAndIconsState extends State<ProfileTextAndIcons> {
   @override
   Widget build(BuildContext context) {
     return Row(

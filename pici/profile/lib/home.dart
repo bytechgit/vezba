@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:profile/perfume_glass.dart';
-import 'package:profile/profile_Alice_Jack.dart';
-import 'package:profile/row_three_container.dart';
+import 'dart:math';
 
-import 'first_row_cont_text.dart';
+import 'package:flutter/material.dart';
+import 'package:profile/perfurm.dart';
+
+import 'package:profile/perfurms.dart';
+import 'package:profile/profile_Alice_Jack.dart';
+import 'package:profile/category.dart';
+import 'package:profile/profile_text_and_icons.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -30,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: const [
-            FirstRowContText(),
+            ProfileTextAndIcons(),
             SizedBox(
               height: 30,
             ),
@@ -38,11 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 30,
             ),
-            RowThreeContainer(),
+            Category(),
             SizedBox(
               height: 30,
             ),
-            Expanded(child: PerfumeGlass()),
+            Expanded(child: Perfurm()),
           ],
         ),
       ),

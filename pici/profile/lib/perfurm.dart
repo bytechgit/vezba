@@ -1,88 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:profile/perfurm_model.dart';
+import 'package:profile/perfurms.dart';
 
-import 'models_perfume_glass.dart';
-
-class Perfurm extends StatelessWidget {
-  final ModelsPerfurm e;
-  const Perfurm({
-    required this.e,
-    super.key,
-  });
+class Perfurm extends StatefulWidget {
+  const Perfurm({super.key});
 
   @override
+  State<Perfurm> createState() => _PerfurmState();
+}
+
+class _PerfurmState extends State<Perfurm> {
+  List<PerfurmModel> perfurme = [
+    PerfurmModel(
+        picture: "avaluxe.jpg",
+        tekst: "AvaLuxe glass",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+    PerfurmModel(
+        picture: "dereklum.jpg",
+        tekst: "DerekLum",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+    PerfurmModel(
+        picture: "glasavon.jpg",
+        tekst: "GlasAvon",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+    PerfurmModel(
+        picture: "avaluxe.jpg",
+        tekst: "AvaLuxe glass",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+    PerfurmModel(
+        picture: "dereklum.jpg",
+        tekst: "DerekLum",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+    PerfurmModel(
+        picture: "glasavon.jpg",
+        tekst: "GlasAvon",
+        tekst1: "Perfurme",
+        tekst2: "\$86"),
+  ];
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey.withOpacity(0.05),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 10.0, bottom: 2, right: 5, left: 5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  e.picture,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(
-              e.tekst,
-              maxLines: 2,
-              style: const TextStyle(color: Colors.black, fontSize: 17),
-            ),
-            Text(
-              e.tekst1,
-              style: const TextStyle(color: Colors.black, fontSize: 17),
-            ),
-            LayoutBuilder(builder: (context, c) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    e.tekst2,
-                    style: const TextStyle(color: Colors.black, fontSize: 15),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 2,
-                      right: 7,
-                      left: 7,
-                      bottom: 4,
-                    ),
-                    child: Container(
-                      constraints: const BoxConstraints(
-                        maxWidth: 40,
-                      ),
-                      width: c.maxWidth * 0.2,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 250, 113, 103),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(
-                        Icons.add,
-                        size: 15,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            }),
-          ],
-        ),
-      ),
+    return GridView.count(
+      mainAxisSpacing: 10,
+      childAspectRatio: 3 / 4,
+      crossAxisCount: 2,
+      crossAxisSpacing: 10,
+      children: [
+        ...perfurme.map((e) {
+          return Perfurms(e: e);
+        })
+      ],
     );
   }
 }

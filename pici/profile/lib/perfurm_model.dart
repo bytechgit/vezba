@@ -1,10 +1,10 @@
-class ModelsPerfurm {
+class PerfurmModel {
   String picture;
   String tekst;
   String tekst1;
   String tekst2;
 
-  ModelsPerfurm(
+  PerfurmModel(
       {required this.picture,
       required this.tekst,
       required this.tekst1,

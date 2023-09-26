@@ -4,10 +4,10 @@ class FruitCartModel {
   String sold;
 
   String reviews;
-  String cena;
+  String price;
 
   FruitCartModel(
-      {required this.cena,
+      {required this.price,
       required this.picture,
       required this.nameFruit,
       required this.sold,

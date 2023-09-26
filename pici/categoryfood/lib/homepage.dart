@@ -1,14 +1,12 @@
-import 'package:categoryfood/bottomnavi.dart';
-import 'package:categoryfood/category.dart';
-import 'package:categoryfood/fruit_cart.dart';
-import 'package:categoryfood/fruit_slider.dart';
 import 'package:categoryfood/profile_pasar_chowkit.dart';
-import 'package:categoryfood/shop_category_text.dart';
-import 'package:categoryfood/title_page.dart';
+import 'package:categoryfood/title_widget.dart';
 import 'package:categoryfood/usually_buy.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+import 'bottom_navi.dart';
+import 'category.dart';
+import 'fruit_slider.dart';
+import 'fruits_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 6,
               ),
-              const TitlePage(),
+              const TitleWidget(),
               const SizedBox(
                 height: 15,
               ),
@@ -48,10 +46,6 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 15,
               ),
-              const ShopCategoryText(),
-              const SizedBox(
-                height: 15,
-              ),
               const Category(),
               const SizedBox(
                 height: 15,
@@ -60,7 +54,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 6,
               ),
-              const FruitCart(),
+              const FruitCard(),
             ],
           ),
         ),

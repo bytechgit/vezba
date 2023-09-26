@@ -1,17 +1,16 @@
-import 'package:categoryfood/fruit_cart_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class FruitCarts extends StatefulWidget {
+import 'models/fruit_cart_model.dart';
+
+class FruitCards extends StatefulWidget {
   final FruitCartModel e;
-  const FruitCarts({super.key, required this.e});
+  const FruitCards({super.key, required this.e});
 
   @override
-  State<FruitCarts> createState() => _FruitCartsState();
+  State<FruitCards> createState() => _FruitCartsState();
 }
 
-class _FruitCartsState extends State<FruitCarts> {
+class _FruitCartsState extends State<FruitCards> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -122,7 +121,7 @@ class _FruitCartsState extends State<FruitCarts> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  widget.e.cena,
+                  widget.e.price,
                   style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

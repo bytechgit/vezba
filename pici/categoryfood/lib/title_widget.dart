@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class TitlePage extends StatefulWidget {
-  const TitlePage({super.key});
+class TitleWidget extends StatefulWidget {
+  const TitleWidget({super.key});
 
   @override
-  State<TitlePage> createState() => _TitlePageState();
+  State<TitleWidget> createState() => _TitleWidgetState();
 }
 
-class _TitlePageState extends State<TitlePage> {
+class _TitleWidgetState extends State<TitleWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(

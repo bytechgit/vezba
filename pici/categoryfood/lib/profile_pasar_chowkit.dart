@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ProfilePasarChowkit extends StatefulWidget {
   const ProfilePasarChowkit({super.key});
@@ -27,6 +25,7 @@ class _ProfilePasarChowkitState extends State<ProfilePasarChowkit> {
           width: 10,
         ),
         const Flexible(
+          flex: 3,
           child: Text(
             "Pasar Chowkit, Malaysia",
             style: TextStyle(

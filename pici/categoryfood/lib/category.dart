@@ -1,6 +1,5 @@
+import 'package:categoryfood/models/category_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Category extends StatefulWidget {
   const Category({super.key});
@@ -10,69 +9,94 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
-  List<String> myCategory = [
-    "assets/all.png",
-    "assets/vegan.png",
-    "assets/f.png",
-    "assets/eggs.jpg",
-    "assets/meat.jpg",
-    "assets/f.png",
-    "assets/eggs.jpg",
-    "assets/meat.jpg",
+  List<CategoryModel> myCategory = [
+    CategoryModel(
+      nameCategory: "All",
+      picture: "assets/all.png",
+    ),
+    CategoryModel(
+      nameCategory: "Vegan",
+      picture: "assets/vegan.png",
+    ),
+    CategoryModel(
+      nameCategory: "Fruits",
+      picture: "assets/f.png",
+    ),
+    CategoryModel(
+      nameCategory: "Meat",
+      picture: "assets/eggs.jpg",
+    ),
+    CategoryModel(nameCategory: "Eggs", picture: "assets/vegan.png"),
+    CategoryModel(
+      nameCategory: "Fruits",
+      picture: "assets/f.png",
+    ),
+    CategoryModel(
+      nameCategory: "Fruits",
+      picture: "assets/f.png",
+    ),
+    CategoryModel(
+      nameCategory: "Meat",
+      picture: "assets/eggs.jpg",
+    ),
   ];
-  List<String> tekstFruits = [
-    "All",
-    "Vegan",
-    "Fruits",
-    "Meat",
-    "Eggs",
-    "Fruits",
-    "Meat",
-    "Eggs",
-  ];
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: myCategory.asMap().entries.map((entry) {
-          final int index = entry
-              .key; //izvlaci index trenutnog elementa iz liste iz liste mycategory znaci index sadrzi poziciju trenutnog elementa
-          final String imagePath =
-              entry.value; //izvlaci vrednost trenutnog elementa
-          final String text =
-              (index < tekstFruits.length) ? tekstFruits[index] : '';
-
-          return Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 45,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: AssetImage(imagePath),
-                      fit: BoxFit.cover,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            Text(
+              "Shop Category",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            ),
+            Icon(Icons.east),
+          ],
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(children: [
+            ...myCategory.map(
+              (e) {
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: AssetImage(e.picture),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                text,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15),
-              ),
-            ],
-          );
-        }).toList(),
-      ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      e.nameCategory,
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ]),
+        ),
+      ],
     );
   }
 }

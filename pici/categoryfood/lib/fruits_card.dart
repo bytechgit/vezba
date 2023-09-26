@@ -1,42 +1,41 @@
-import 'package:categoryfood/fruit_cart_model.dart';
-import 'package:categoryfood/fruit_carts.dart';
+import 'package:categoryfood/fruit_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class FruitCart extends StatefulWidget {
-  const FruitCart({super.key});
+import 'models/fruit_cart_model.dart';
+
+class FruitCard extends StatefulWidget {
+  const FruitCard({super.key});
 
   @override
-  State<FruitCart> createState() => _FruitCartState();
+  State<FruitCard> createState() => _FruitCardState();
 }
 
-class _FruitCartState extends State<FruitCart> {
+class _FruitCardState extends State<FruitCard> {
   List<FruitCartModel> fruit = [
     FruitCartModel(
       reviews: "122 Reviews",
-      cena: "\$4.99/kg",
+      price: "\$4.99/kg",
       picture: "assets/papaya.jpg",
       nameFruit: "Papaya",
       sold: "110 sold",
     ),
     FruitCartModel(
       reviews: "122 Reviews",
-      cena: "\$1.99/kg",
+      price: "\$1.99/kg",
       picture: "assets/premiumgrape.jpg",
       nameFruit: "Premium Grape",
       sold: "12 sold",
     ),
     FruitCartModel(
       reviews: "122 Reviews",
-      cena: "\$0.99/kg",
+      price: "\$0.99/kg",
       picture: "assets/orange.jpg",
       nameFruit: "Premium Grape",
       sold: "12 sold",
     ),
     FruitCartModel(
       reviews: "122 Reviews",
-      cena: "\$0.99/kg",
+      price: "\$0.99/kg",
       picture: "assets/mango.jpg",
       nameFruit: "Sweet Mango",
       sold: "120 sold",
@@ -54,7 +53,7 @@ class _FruitCartState extends State<FruitCart> {
       crossAxisSpacing: 10,
       children: [
         ...fruit.map((e) {
-          return FruitCarts(
+          return FruitCards(
             e: e,
           );
         })

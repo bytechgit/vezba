@@ -58,7 +58,7 @@ class _HotelCardState extends State<HotelCard> {
               ),
             ),
             const SizedBox(height: 20),
-            TransportationsHotelWidget(),
+            const TransportationsHotelWidget(),
           ],
         ),
       ),

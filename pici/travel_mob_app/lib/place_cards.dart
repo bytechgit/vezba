@@ -41,27 +41,23 @@ class _PlacesCardState extends State<PlacesCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Column(
+        const Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hot Places",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
-                ),
-                Text(
-                  "See All",
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w200,
-                      fontSize: 17),
-                ),
-              ],
+            Text(
+              "Hot Places",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22),
+            ),
+            Text(
+              "See All",
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w200,
+                  fontSize: 17),
             ),
           ],
         ),

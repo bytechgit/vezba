@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_mob_app/category.dart';
+import 'package:travel_mob_app/categories.dart';
 import 'package:travel_mob_app/header_widget.dart';
-import 'package:travel_mob_app/hotels_card.dart';
-import 'package:travel_mob_app/parks_card.dart';
+import 'package:travel_mob_app/hotel_cards.dart';
+import 'package:travel_mob_app/park_cards.dart';
 
-import 'package:travel_mob_app/places_card.dart';
+import 'package:travel_mob_app/place_cards.dart';
 import 'package:travel_mob_app/textfield_widget.dart';
 
 class HomePage extends StatefulWidget {

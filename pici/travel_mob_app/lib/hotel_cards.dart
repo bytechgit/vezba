@@ -10,7 +10,7 @@ class HotelsCard extends StatefulWidget {
 }
 
 class _HotelsCardState extends State<HotelsCard> {
-  List<HotelCardModel> hotel = [
+  List<HotelCardModel> hotels = [
     HotelCardModel(nameHotel: "Miami St Hotel", picture: "assets/miami.jpg"),
     HotelCardModel(
         nameHotel: "Detroit St Hotel", picture: "assets/detroit.jpg"),
@@ -29,7 +29,7 @@ class _HotelsCardState extends State<HotelsCard> {
       crossAxisSpacing: 10,
       childAspectRatio: 6 / 7,
       children: [
-        ...hotel.map((e) {
+        ...hotels.map((e) {
           return HotelCard(hotel: e);
         })
       ],

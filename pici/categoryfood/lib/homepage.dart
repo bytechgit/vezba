@@ -1,4 +1,4 @@
-import 'package:categoryfood/profile_pasar_chowkit.dart';
+import 'package:categoryfood/profile_name.dart';
 import 'package:categoryfood/title_widget.dart';
 import 'package:categoryfood/usually_buy.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 15,
               ),
-              const ProfilePasarChowkit(),
+              const ProfileName(),
               const SizedBox(
                 height: 7,
               ),
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 6,
               ),
-              const FruitCard(),
+              const FruitsCard(),
             ],
           ),
         ),

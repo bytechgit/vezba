@@ -10,9 +10,9 @@ class UsuallyBuy extends StatefulWidget {
 class _UsuallyBuyState extends State<UsuallyBuy> {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
+      children: [
         Text(
           "Usually Buy",
           style: TextStyle(

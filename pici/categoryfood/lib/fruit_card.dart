@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'models/fruit_cart_model.dart';
+import 'models/fruit_card_model.dart';
 
-class FruitCards extends StatefulWidget {
-  final FruitCartModel e;
-  const FruitCards({super.key, required this.e});
+class FruitCard extends StatefulWidget {
+  final FruitCardModel fruit;
+  const FruitCard({super.key, required this.fruit});
 
   @override
-  State<FruitCards> createState() => _FruitCartsState();
+  State<FruitCard> createState() => _FruitCardState();
 }
 
-class _FruitCartsState extends State<FruitCards> {
+class _FruitCardState extends State<FruitCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +27,7 @@ class _FruitCartsState extends State<FruitCards> {
               borderRadius: BorderRadius.circular(20),
               image: DecorationImage(
                   image: AssetImage(
-                    widget.e.picture,
+                    widget.fruit.picture,
                   ),
                   fit: BoxFit.cover),
             ),
@@ -73,7 +73,7 @@ class _FruitCartsState extends State<FruitCards> {
           Padding(
             padding: const EdgeInsets.only(left: 8.0, right: 8),
             child: Text(
-              widget.e.nameFruit,
+              widget.fruit.nameFruit,
               style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class _FruitCartsState extends State<FruitCards> {
             padding: const EdgeInsets.only(left: 8.0, right: 8),
             child: Row(
               children: [
-                Expanded(child: Text(widget.e.sold)),
+                Expanded(child: Text(widget.fruit.sold)),
                 const SizedBox(
                   width: 4,
                 ),
@@ -105,7 +105,7 @@ class _FruitCartsState extends State<FruitCards> {
                       const SizedBox(
                         width: 4,
                       ),
-                      Expanded(child: Text(widget.e.reviews)),
+                      Expanded(child: Text(widget.fruit.reviews)),
                     ],
                   ),
                 ),
@@ -121,7 +121,7 @@ class _FruitCartsState extends State<FruitCards> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  widget.e.price,
+                  widget.fruit.price,
                   style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

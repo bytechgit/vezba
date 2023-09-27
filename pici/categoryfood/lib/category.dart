@@ -9,7 +9,7 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
-  List<CategoryModel> myCategory = [
+  List<CategoryModel> categorys = [
     CategoryModel(
       nameCategory: "All",
       picture: "assets/all.png",
@@ -46,9 +46,9 @@ class _CategoryState extends State<Category> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text(
               "Shop Category",
               style: TextStyle(
@@ -62,8 +62,8 @@ class _CategoryState extends State<Category> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(children: [
-            ...myCategory.map(
-              (e) {
+            ...categorys.map(
+              (category) {
                 return Column(
                   children: [
                     Padding(
@@ -74,7 +74,7 @@ class _CategoryState extends State<Category> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage(e.picture),
+                            image: AssetImage(category.picture),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -84,7 +84,7 @@ class _CategoryState extends State<Category> {
                       height: 10,
                     ),
                     Text(
-                      e.nameCategory,
+                      category.nameCategory,
                       style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

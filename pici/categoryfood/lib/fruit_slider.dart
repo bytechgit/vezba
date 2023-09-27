@@ -22,14 +22,14 @@ class _FruitSliderState extends State<FruitSlider> {
     return SizedBox(
       height: 200,
       child: CarouselSlider(
-        items: myItems.map((e) {
+        items: myItems.map((picture) {
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
-                  image: AssetImage(e),
+                  image: AssetImage(picture),
                   fit: BoxFit.cover,
                 ),
               ),

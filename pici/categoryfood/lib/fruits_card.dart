@@ -1,39 +1,39 @@
 import 'package:categoryfood/fruit_card.dart';
 import 'package:flutter/material.dart';
 
-import 'models/fruit_cart_model.dart';
+import 'models/fruit_card_model.dart';
 
-class FruitCard extends StatefulWidget {
-  const FruitCard({super.key});
+class FruitsCard extends StatefulWidget {
+  const FruitsCard({super.key});
 
   @override
-  State<FruitCard> createState() => _FruitCardState();
+  State<FruitsCard> createState() => _FruitsCardState();
 }
 
-class _FruitCardState extends State<FruitCard> {
-  List<FruitCartModel> fruit = [
-    FruitCartModel(
+class _FruitsCardState extends State<FruitsCard> {
+  List<FruitCardModel> fruits = [
+    FruitCardModel(
       reviews: "122 Reviews",
       price: "\$4.99/kg",
       picture: "assets/papaya.jpg",
       nameFruit: "Papaya",
       sold: "110 sold",
     ),
-    FruitCartModel(
+    FruitCardModel(
       reviews: "122 Reviews",
       price: "\$1.99/kg",
       picture: "assets/premiumgrape.jpg",
       nameFruit: "Premium Grape",
       sold: "12 sold",
     ),
-    FruitCartModel(
+    FruitCardModel(
       reviews: "122 Reviews",
       price: "\$0.99/kg",
       picture: "assets/orange.jpg",
       nameFruit: "Premium Grape",
       sold: "12 sold",
     ),
-    FruitCartModel(
+    FruitCardModel(
       reviews: "122 Reviews",
       price: "\$0.99/kg",
       picture: "assets/mango.jpg",
@@ -45,6 +45,7 @@ class _FruitCardState extends State<FruitCard> {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
+      padding: const EdgeInsets.all(0),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
@@ -52,9 +53,9 @@ class _FruitCardState extends State<FruitCard> {
       childAspectRatio: 3 / 4,
       crossAxisSpacing: 10,
       children: [
-        ...fruit.map((e) {
-          return FruitCards(
-            e: e,
+        ...fruits.map((fruit) {
+          return FruitCard(
+            fruit: fruit,
           );
         })
       ],

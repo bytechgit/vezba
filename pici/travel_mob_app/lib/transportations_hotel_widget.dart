@@ -14,7 +14,7 @@ class TransportationsHotelWidget extends StatefulWidget {
 
 class _TransportationsHotelWidgetState
     extends State<TransportationsHotelWidget> {
-  List<TransportationModel> transfortations = [
+  List<TransportationModel> transportations = [
     TransportationModel(
         numberTransfortation: "04", transfortation: Icons.car_crash_rounded),
     TransportationModel(
@@ -26,7 +26,7 @@ class _TransportationsHotelWidgetState
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ...transfortations.map(
+        ...transportations.map(
           (e) {
             return TransportationHotelWidget(transportations: e);
           },

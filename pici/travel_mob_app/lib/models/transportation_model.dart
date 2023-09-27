@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TransfortationModel {
+class TransportationModel {
   IconData transfortation;
-  String numbertransfortation;
+  String numberTransfortation;
 
-  TransfortationModel(
-      {required this.numbertransfortation, required this.transfortation});
+  TransportationModel(
+      {required this.numberTransfortation, required this.transfortation});
 }

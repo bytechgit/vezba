@@ -26,7 +26,6 @@ class _CategoryState extends State<Category> {
               // Kako bi se dobila lista parova ključ-vrednost
               final int index = entry.key;
               final String category = entry.value;
-
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(

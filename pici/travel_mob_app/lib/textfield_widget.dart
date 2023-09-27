@@ -34,8 +34,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               Positioned(
                 right: 0,
                 child: Container(
-                  width: 50,
-                  height: 50,
+                  width: 48,
+                  height: 48,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.blue,

@@ -39,18 +39,13 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             ),
           ],
         ),
-        const Spacer(
-          flex: 8,
-        ),
-        Expanded(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              "assets/profile.jpeg",
-              //width: 30,
-              height: 50,
-              fit: BoxFit.cover,
-            ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: Image.asset(
+            "assets/profile.jpeg",
+            width: 40,
+            height: 40,
+            fit: BoxFit.cover,
           ),
         ),
       ],

@@ -18,35 +18,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderWidget(),
-              SizedBox(
-                height: 12,
-              ),
-              TextFieldWidget(),
-              SizedBox(
-                height: 12,
-              ),
-              Category(),
-              SizedBox(
-                height: 12,
-              ),
-              ParksCard(),
-              SizedBox(
-                height: 12,
-              ),
-              PlacesCard(),
-              SizedBox(
-                height: 12,
-              ),
-              HotelsCard(),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderWidget(),
+                SizedBox(
+                  height: 12,
+                ),
+                TextFieldWidget(),
+                SizedBox(
+                  height: 12,
+                ),
+                Category(),
+                SizedBox(
+                  height: 12,
+                ),
+                ParksCard(),
+                SizedBox(
+                  height: 12,
+                ),
+                PlacesCard(),
+                SizedBox(
+                  height: 12,
+                ),
+                HotelsCard(),
+              ],
+            ),
           ),
         ),
       ),

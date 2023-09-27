@@ -12,12 +12,12 @@ class TransportationHotelWidget extends StatefulWidget {
 }
 
 class _TransportationHotelWidgetState extends State<TransportationHotelWidget> {
-  List<TransfortationModel> transfortation = [
-    TransfortationModel(
+  List<TransportationModel> transfortation = [
+    TransportationModel(
         numbertransfortation: "04", transfortation: Icons.car_crash_rounded),
-    TransfortationModel(
+    TransportationModel(
         numbertransfortation: "05", transfortation: Icons.bus_alert),
-    TransfortationModel(
+    TransportationModel(
         numbertransfortation: "06", transfortation: Icons.bike_scooter),
   ];
   @override
@@ -37,7 +37,7 @@ class _TransportationHotelWidgetState extends State<TransportationHotelWidget> {
                     color: Colors.blue,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

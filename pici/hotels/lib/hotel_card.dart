@@ -75,11 +75,16 @@ class _HotelCardState extends State<HotelCard> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
-                      child: FittedBox(
-                        child: Text(
-                          widget.hotel.numberSince,
-                          style: const TextStyle(fontSize: 15),
-                        ),
+                      child: Row(
+                        children: [
+                          FittedBox(
+                            child: Text(
+                              widget.hotel.numberSince.toString(),
+                              style: const TextStyle(fontSize: 15),
+                            ),
+                          ),
+                          const FittedBox(child: Text("% Off")),
+                        ],
                       ),
                     ),
                   ),
@@ -90,7 +95,8 @@ class _HotelCardState extends State<HotelCard> {
                         Icons.star,
                         color: Colors.yellow,
                       ),
-                      FittedBox(child: Text(widget.hotel.numberRating)),
+                      FittedBox(
+                          child: Text(widget.hotel.numberRating.toString())),
                     ],
                   ),
                 ],
@@ -125,7 +131,7 @@ class _HotelCardState extends State<HotelCard> {
                 text: TextSpan(
                   children: <InlineSpan>[
                     TextSpan(
-                      text: widget.hotel.price,
+                      text: widget.hotel.price.toString(),
                       style: const TextStyle(
                         color: Colors.blue,
                         fontSize: 17,

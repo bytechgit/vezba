@@ -80,11 +80,16 @@ class _NearbyHotelCardState extends State<NearbyHotelCard> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(3.0),
-                              child: FittedBox(
-                                child: Text(
-                                  widget.nearbyHotel.numberSince,
-                                  style: const TextStyle(fontSize: 15),
-                                ),
+                              child: Row(
+                                children: [
+                                  FittedBox(
+                                    child: Text(
+                                      widget.nearbyHotel.numberSince.toString(),
+                                      style: const TextStyle(fontSize: 15),
+                                    ),
+                                  ),
+                                  const FittedBox(child: Text("% Off")),
+                                ],
                               ),
                             ),
                           ),
@@ -96,7 +101,8 @@ class _NearbyHotelCardState extends State<NearbyHotelCard> {
                                 color: Colors.yellow,
                               ),
                               FittedBox(
-                                  child: Text(widget.nearbyHotel.numberRating)),
+                                  child: Text(widget.nearbyHotel.numberRating
+                                      .toString())),
                             ],
                           ),
                         ],
@@ -143,7 +149,7 @@ class _NearbyHotelCardState extends State<NearbyHotelCard> {
                         text: TextSpan(
                           children: <InlineSpan>[
                             TextSpan(
-                              text: widget.nearbyHotel.price,
+                              text: widget.nearbyHotel.price.toString(),
                               style: const TextStyle(
                                 color: Colors.blue,
                                 fontSize: 17,

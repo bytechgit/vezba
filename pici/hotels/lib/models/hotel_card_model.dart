@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class HotelCardModel {
   String picture;
-  String numberRating;
-  String numberSince;
+  double numberRating;
+  int numberSince;
   String nameHotel;
   String nameCity;
-  String price;
+  double price;
   IconData location;
   IconData favorite;
   String partOfTheDay;

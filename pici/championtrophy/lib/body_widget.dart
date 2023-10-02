@@ -72,7 +72,7 @@ class _BodyWidgetState extends State<BodyWidget> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
                     const Expanded(child: RankingsPlayerWidget()),
                   ],

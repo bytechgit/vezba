@@ -12,7 +12,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   ProfileModel profil = ProfileModel(
-      verificated: Icons.verified,
+      verificatedIcon: Icons.verified,
       city: "NEWYORK, USA",
       description:
           "Lorem isum dolor sit amet, consectetur adipiscring elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -163,7 +163,7 @@ class _ProfileState extends State<Profile> {
                                       width: 2,
                                     ),
                                     Icon(
-                                      profil.verificated,
+                                      profil.verificatedIcon,
                                       color: Colors.yellow,
                                     ),
                                   ],
@@ -246,27 +246,27 @@ class _ProfileState extends State<Profile> {
                           }),
                         ],
                       ),
-                      Text(
+                      const Text(
                         "Marving",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Age"),
                           Text("Years"),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Height"),
@@ -317,7 +317,6 @@ class _ProfileState extends State<Profile> {
                                 child: const Icon(
                                   Icons.close,
                                   color: Colors.purple,
-                                  //   size: 25,
                                 ),
                               ),
                             ),
@@ -340,7 +339,6 @@ class _ProfileState extends State<Profile> {
                                 child: const Icon(
                                   Icons.favorite,
                                   color: Colors.white,
-                                  // size: 25,
                                 ),
                               ),
                             ),
@@ -351,9 +349,6 @@ class _ProfileState extends State<Profile> {
                           Expanded(
                             child: Center(
                               child: Container(
-                                constraints: const BoxConstraints(
-                                  minHeight: 10,
-                                ),
                                 width: 60,
                                 height: 60,
                                 decoration: BoxDecoration(
@@ -363,7 +358,6 @@ class _ProfileState extends State<Profile> {
                                 child: const Icon(
                                   Icons.star,
                                   color: Colors.black,
-                                  // size: 25,
                                 ),
                               ),
                             ),

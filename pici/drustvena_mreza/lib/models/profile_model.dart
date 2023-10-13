@@ -5,11 +5,11 @@ class ProfileModel {
   final String name;
   final String city;
   final String description;
-  final IconData verificated;
+  final IconData verificatedIcon;
 
   ProfileModel(
       {required this.city,
-      required this.verificated,
+      required this.verificatedIcon,
       required this.description,
       required this.name,
       required this.picture});

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Play extends StatefulWidget {
-  const Play({super.key});
+  final Color boja;
+  const Play({super.key, required this.boja});
 
   @override
   State<Play> createState() => _PlayState();
@@ -30,16 +31,33 @@ class _PlayState extends State<Play> {
                   height: 30,
                   color: const Color.fromRGBO(217, 218, 222, 1),
                 ),
-                Image.asset(
-                  "assets/play_sound.png",
-                  width: 65,
-                  height: 65,
+                Stack(
+                  children: [
+                    Image.asset(
+                      "assets/play_button.png",
+                      fit: BoxFit.cover,
+                      width: 60,
+                      height: 60,
+                      color: const Color.fromRGBO(23, 28, 69, 1),
+                    ),
+                    Positioned(
+                      top: 0,
+                      left: -3,
+                      child: Icon(
+                        Icons.play_arrow,
+                        color: widget.boja,
+                        size: 60,
+                      ),
+                    ),
+                  ],
                 ),
-                Image.asset(
-                  "assets/favorite_sound.png",
-                  width: 30,
-                  height: 30,
-                  color: const Color.fromRGBO(217, 218, 222, 1),
+                Center(
+                  child: Image.asset(
+                    "assets/favorite_sound.png",
+                    width: 30,
+                    height: 30,
+                    color: const Color.fromRGBO(217, 218, 222, 1),
+                  ),
                 ),
               ],
             ),
@@ -48,9 +66,9 @@ class _PlayState extends State<Play> {
               child: Column(
                 children: [
                   Slider(
-                    inactiveColor: const Color.fromRGBO(217, 217, 217, 1),
-                    thumbColor: const Color.fromRGBO(149, 69, 156, 1),
-                    activeColor: const Color.fromRGBO(149, 69, 156, 1),
+                    inactiveColor: widget.boja,
+                    thumbColor: widget.boja,
+                    activeColor: widget.boja,
                     max: 100,
                     min: 0,
                     value: currentTime,
@@ -70,7 +88,7 @@ class _PlayState extends State<Play> {
                             "00:00",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 8,
+                              fontSize: 12,
                             ),
                           ),
                         ),
@@ -79,7 +97,7 @@ class _PlayState extends State<Play> {
                             "10:00",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 8,
+                              fontSize: 12,
                             ),
                           ),
                         ),

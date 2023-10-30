@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:palette_generator/palette_generator.dart';
 import 'package:somniumapp/body_player.dart';
 import 'package:somniumapp/play.dart';
 
@@ -12,13 +13,42 @@ class Player extends StatefulWidget {
 }
 
 class _PlayerState extends State<Player> {
+  List<String> images = [
+    // "assets/player_background.png",
+    //"assets/player_background2.png"
+    "assets/player_background3.png"
+  ];
+  List<PaletteColor?> colors = [];
+  final int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _updatePalette();
+  }
+
+  Future<void> _updatePalette() async {
+    for (String image in images) {
+      final PaletteGenerator generator =
+          await PaletteGenerator.fromImageProvider(
+        AssetImage(image),
+        size: const Size(50, 100),
+      );
+
+      colors.add(generator.lightMutedColor ?? PaletteColor(Colors.blue, 2));
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    //print(colors);
     return Scaffold(
       body: Stack(fit: StackFit.expand, children: [
-        const Positioned.fill(
-          bottom: 0,
-          child: BodyPlayer(),
+        Positioned.fill(
+          bottom: size.height * 0.2,
+          child: const BodyPlayer(),
         ),
         Positioned(
           bottom: 200,
@@ -60,7 +90,7 @@ class _PlayerState extends State<Player> {
           ),
         ),
         Positioned(
-          top: 30,
+          top: 50,
           child: Row(
             children: [
               Image.asset(
@@ -78,11 +108,15 @@ class _PlayerState extends State<Player> {
             ],
           ),
         ),
-        const Positioned(
+        Positioned(
           left: 0,
           right: 0,
           bottom: 0,
-          child: Play(),
+          child: Play(
+            boja: colors.isNotEmpty
+                ? colors[_currentIndex]?.color ?? Colors.white
+                : Colors.white,
+          ),
         ),
       ]),
     );

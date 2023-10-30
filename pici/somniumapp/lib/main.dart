@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:somniumapp/home_page.dart';
+import 'package:somniumapp/education_player.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage(),
+      home: EducationPlayer(),
     );
   }
 }

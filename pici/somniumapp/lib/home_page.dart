@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:somniumapp/header_home_page.dart';
 
-import 'package:somniumapp/recomended_songs.dart';
+import 'package:somniumapp/recommended_songs.dart';
 
 import 'package:somniumapp/recommended_educations.dart';
 
@@ -55,7 +55,11 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const RecommendedSongs(),
+                        const RecommendedSongs(
+                          viewAllText: "Pogledaj Sve",
+                          category: "Preporucena Muzika",
+                          categoryIcon: "assets/song.png",
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
@@ -77,9 +81,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            // const Positioned(
-            //     top: 230, left: 10, right: 10, child: AvatarChat()),
-            // Positioned(bottom: 0, left: 0, right: 0, child: BottomNavi()),
           ]),
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/education_play_textfiled.dart';
+import 'package:somniumapp/player/widgets/education_play_textfiled.dart';
 import 'package:somniumapp/episode.dart';
-import 'package:somniumapp/models/education_player_model.dart';
+import 'package:somniumapp/player/models/education_player_model.dart';
 import 'package:somniumapp/models/episode_model.dart';
 
 class BodyEducationPlayer extends StatefulWidget {

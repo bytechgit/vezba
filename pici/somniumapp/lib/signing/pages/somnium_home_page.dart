@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/sign_in.dart';
-import 'package:somniumapp/sign_up.dart';
+import 'package:somniumapp/signing/pages/sign_in.dart';
+import 'package:somniumapp/signing/pages/sign_up.dart';
 
 class SomniumHomePage extends StatefulWidget {
   const SomniumHomePage({super.key});

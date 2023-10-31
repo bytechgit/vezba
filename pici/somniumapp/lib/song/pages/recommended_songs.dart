@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/models/sound_model.dart';
-import 'package:somniumapp/sound_card.dart';
+import 'package:somniumapp/models/song_model.dart';
+import 'package:somniumapp/song_card.dart';
 
 class RecommendedSongs extends StatelessWidget {
-  const RecommendedSongs({super.key});
+  final String categoryIcon;
+  final String category;
+  final String viewAllText;
+  const RecommendedSongs(
+      {super.key,
+      required this.category,
+      required this.categoryIcon,
+      required this.viewAllText});
 
   @override
   Widget build(BuildContext context) {
-    List<SoundModel> mysics = [
-      SoundModel(
+    List<SongModel> mysics = [
+      SongModel(
           author: "Sasa Stojiljkovic",
           nameMusic: "Morning Sleep",
           picture: "assets/picture_music.png",
           time: 65),
-      SoundModel(
+      SongModel(
           author: "Sasa Stojiljkovic",
           nameMusic: "Morning Sleep",
-          picture: "assets/picture_music.png",
+          picture: "assets/song_mountains.png",
           time: 65),
-      SoundModel(
+      SongModel(
           author: "Sasa Stojiljkovic",
           nameMusic: "Morning Sleep",
           picture: "assets/picture_music.png",
@@ -35,7 +42,7 @@ class RecommendedSongs extends StatelessWidget {
           child: Row(
             children: [
               Image.asset(
-                "assets/sound.png",
+                categoryIcon,
                 fit: BoxFit.cover,
                 width: 24,
                 height: 24,
@@ -46,7 +53,7 @@ class RecommendedSongs extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: Text(
-                  "Preporučena muzika",
+                  category,
                   style: GoogleFonts.redHatDisplay(
                       color: const Color.fromRGBO(239, 239, 239, 1),
                       fontSize: 17,
@@ -54,16 +61,21 @@ class RecommendedSongs extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Text(
-                  "Pogledaj sve",
-                  textAlign: TextAlign.end,
-                  style: GoogleFonts.redHatDisplay(
-                      color: const Color.fromRGBO(236, 167, 44, 1),
-                      fontSize: 10,
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w700),
+                child: InkWell(
+                  onTap: () {
+                    //Navigator.push(context, MaterialPageRoute(builder: (context)=>const Stranica()));
+                  },
+                  child: Text(
+                    viewAllText,
+                    textAlign: TextAlign.end,
+                    style: GoogleFonts.redHatDisplay(
+                        color: const Color.fromRGBO(236, 167, 44, 1),
+                        fontSize: 10,
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.w700),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -76,7 +88,7 @@ class RecommendedSongs extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ...mysics.map((e) {
-                return SoundCard(music: e);
+                return SongCard(music: e);
               }),
             ],
           ),

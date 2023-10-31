@@ -1,10 +1,11 @@
-class SoundModel {
+class SongModel {
   final String nameMusic;
+
   final String author;
   final String picture;
   final double time;
 
-  SoundModel(
+  SongModel(
       {required this.author,
       required this.nameMusic,
       required this.picture,

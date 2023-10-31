@@ -2,10 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/body_log_in.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+import 'package:somniumapp/signing/widgets/body_log_up.dart';
+
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class SignIn extends StatelessWidget {
                   children: <Widget>[
                     Center(
                       child: Text(
-                        "Log In!",
+                        "Sign Up!",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.reenieBeanie(
                           fontWeight: FontWeight.w500,
@@ -52,13 +53,13 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 5,
+                flex: 4,
                 child: Image.asset(
                   "assets/avatar_log_in_up.png",
                   fit: BoxFit.cover,
                 ),
               ),
-              const Expanded(flex: 10, child: BodyLogIn()),
+              const Expanded(flex: 12, child: BodyLogUp()),
             ],
           ),
         ),

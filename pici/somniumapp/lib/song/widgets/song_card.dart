@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/models/sound_model.dart';
+import 'package:somniumapp/models/song_model.dart';
 
-class SoundCard extends StatefulWidget {
-  final SoundModel music;
-  const SoundCard({super.key, required this.music});
+class SongCard extends StatefulWidget {
+  final SongModel music;
+  const SongCard({super.key, required this.music});
 
   @override
-  State<SoundCard> createState() => _SoundCardState();
+  State<SongCard> createState() => _SongCardState();
 }
 
-class _SoundCardState extends State<SoundCard> {
+class _SongCardState extends State<SongCard> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -28,7 +28,7 @@ class _SoundCardState extends State<SoundCard> {
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                     image: AssetImage(widget.music.picture),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -54,7 +54,7 @@ class _SoundCardState extends State<SoundCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
+                Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -70,7 +70,7 @@ class _SoundCardState extends State<SoundCard> {
                         height: 5,
                       ),
                       Text(
-                        widget.music.author,
+                        'Author: ${widget.music.author}',
                         style: GoogleFonts.redHatDisplay(
                           color: const Color.fromRGBO(216, 216, 216, 1),
                           fontSize: 10,
@@ -80,12 +80,14 @@ class _SoundCardState extends State<SoundCard> {
                     ],
                   ),
                 ),
-                Text(
-                  ' ${widget.music.time.toString()} min',
-                  style: GoogleFonts.redHatDisplay(
-                    color: const Color.fromRGBO(216, 216, 216, 1),
-                    fontSize: 10,
-                    fontWeight: FontWeight.w400,
+                Flexible(
+                  child: Text(
+                    ' ${widget.music.time.toString()} min',
+                    style: GoogleFonts.redHatDisplay(
+                      color: const Color.fromRGBO(216, 216, 216, 1),
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ],

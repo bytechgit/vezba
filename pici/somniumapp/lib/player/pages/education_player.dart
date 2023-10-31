@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:somniumapp/body_education_player.dart';
+import 'package:somniumapp/player/widgets/body_education_player.dart';
 
-import 'package:somniumapp/models/education_player_model.dart';
-
-import 'package:somniumapp/education_play_widget.dart';
+import 'package:somniumapp/player/models/education_player_model.dart';
+import 'package:somniumapp/player/widgets/education_play_widget.dart';
 
 class EducationPlayer extends StatefulWidget {
   const EducationPlayer({super.key});

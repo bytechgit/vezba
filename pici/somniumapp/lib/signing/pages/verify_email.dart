@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:somniumapp/body_verify_email.dart';
+import 'package:somniumapp/signing/widgets/body_verify_email.dart';
 
 class VerifyEmail extends StatelessWidget {
   const VerifyEmail({super.key});

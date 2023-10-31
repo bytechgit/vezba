@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:somniumapp/somnium_textfield.dart';
-import 'package:somniumapp/verify_email.dart';
+import 'package:somniumapp/signing/pages/verify_email.dart';
 
 class BodyRecoveryPassword extends StatefulWidget {
   const BodyRecoveryPassword({super.key});

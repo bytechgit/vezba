@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:somniumapp/education_player.dart';
+import 'package:somniumapp/music/view/pages/see_all_music_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: EducationPlayer(),
+      home: SeeAllMusicPage(
+        category: "Omiljeno",
+        pictureIcon: "assets/favorite_icon.png",
+      ),
     );
   }
 }

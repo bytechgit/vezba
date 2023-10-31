@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:somniumapp/models/music_model.dart';
+import 'package:somniumapp/models/sound_model.dart';
 
 class SoundCard extends StatefulWidget {
   final SoundModel music;

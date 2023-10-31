@@ -43,11 +43,12 @@ class MusicMessage extends StatelessWidget {
                           fontWeight: FontWeight.w500),
                     )),
                 Expanded(
-                    flex: 4,
-                    child: Image.asset(
-                      "assets/music_avatar.png",
-                      fit: BoxFit.cover,
-                    )),
+                  flex: 4,
+                  child: Image.asset(
+                    "assets/music_avatar.png",
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Expanded(
                   flex: 3,
                   child: Padding(
